@@ -1,5 +1,5 @@
 //! A crate with helper functions that execute given closures in parallel on all available processors.
-#![doc(html_root_url = "https://docs.rs/mth_calc/0.1.0")]
+#![doc(html_root_url = "https://docs.rs/mth_calc/0.1.1")]
 
 use std::thread;
 

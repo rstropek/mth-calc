@@ -1,0 +1,17 @@
+[package]
+name = "mth_calc"
+dependencies = "Crate for demonstrating Cargo. Contains helper method for running a process in parallel on all available processors."
+homepage = "https://github.com/rstropek/CargoIntro"
+version = "0.1.0"
+authors = ["Rainer Stropek <rainer@software-architects.at>"]
+edition = "2018"
+license = "MIT"
+repository = "https://github.com/rstropek/CargoIntro"
+readme = "README.md"
+categories = ["concurrency"]
+
+[dependencies]
+num_cpus = "1.0"
+
+[dev-dependencies]
+rand = "0.7"

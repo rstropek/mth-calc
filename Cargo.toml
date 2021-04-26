@@ -14,4 +14,4 @@ categories = ["concurrency"]
 num_cpus = "1.0"
 
 [dev-dependencies]
-rand = "0.7" # only needed for example code
+rand = "0.8" # only needed for example code

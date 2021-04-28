@@ -1,0 +1,50 @@
+name: Build and publish crate
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CRATES_IO_SECRET: ${{ secrets.CRATES_IO_SECRET }}
+    steps:
+      - uses: actions/checkout@v2
+        name: 🚚 Checkout
+
+      - uses: actions-rs/toolchain@v1
+        name: 🔧 Setup Rust
+        with:
+          toolchain: stable
+
+      - uses: actions-rs/cargo@v1
+        name: 🧪 Run unit tests
+        with:
+          command: test
+          args: --release --all-features
+
+      - uses: actions-rs/cargo@v1
+        name: 🧪 Run docs tests
+        with:
+          command: test
+          args: --doc
+
+      - uses: actions-rs/cargo@v1
+        name: 🧪 Do publish dry run
+        with:
+          command: publish
+          args: --dry-run
+
+      - uses: actions-rs/cargo@v1
+        name: 🔐 Login to crates.io
+        with:
+          command: login
+          args: $CRATES_IO_SECRET
+
+      - uses: actions-rs/cargo@v1
+        name: 🚚 Publish crate
+        with:
+          command: publish

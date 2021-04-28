@@ -24,7 +24,6 @@ jobs:
         name: 🧪 Run unit tests
         with:
           command: test
-          args: --release --all-features
 
       - uses: actions-rs/cargo@v1
         name: 🧪 Run docs tests
@@ -32,19 +31,12 @@ jobs:
           command: test
           args: --doc
 
-      - uses: actions-rs/cargo@v1
+      - uses: katyo/publish-crates@v1
         name: 🧪 Do publish dry run
         with:
-          command: publish
-          args: --dry-run
+          dry-run: true
 
-      - uses: actions-rs/cargo@v1
-        name: 🔐 Login to crates.io
-        with:
-          command: login
-          args: $CRATES_IO_SECRET
-
-      - uses: actions-rs/cargo@v1
+      - uses: katyo/publish-crates@v1
         name: 🚚 Publish crate
         with:
-          command: publish
+          registry-token: $CRATES_IO_SECRET

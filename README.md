@@ -1,3 +1,6 @@
+[![Build and publish crate](https://github.com/rstropek/mth-calc/actions/workflows/build-and-publish.yaml/badge.svg)](https://github.com/rstropek/mth-calc/actions/workflows/build-and-publish.yaml)
+![Crates.io](https://img.shields.io/crates/d/mth_calc)
+
 # Multi-Threaded Calculation
 
 ## Introduction

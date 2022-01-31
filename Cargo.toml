@@ -2,9 +2,9 @@
 name = "mth_calc"
 description = "Crate for demonstrating Cargo. Contains helper method for running a process in parallel on all available processors."
 homepage = "https://github.com/rstropek/CargoIntro"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["Rainer Stropek <rainer@software-architects.at>"]
-edition = "2018"
+edition = "2021"
 license = "MIT"
 repository = "https://github.com/rstropek/CargoIntro"
 readme = "README.md"

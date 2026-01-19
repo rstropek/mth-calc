@@ -1,5 +1,5 @@
 //! A crate with helper functions that execute given closures in parallel on all available processors.
-#![doc(html_root_url = "https://docs.rs/mth_calc/0.1.6")]
+#![doc(html_root_url = "https://docs.rs/mth_calc/0.2.0")]
 
 use std::thread;
 
@@ -23,12 +23,12 @@ use std::thread;
 /// 
 /// let result = mth_calc::run_on_all_cpus::<f32>(|| {
 ///     // Create a thread-local random generator
-///     let mut rng = thread_rng();
+///     let mut rng = rand::rng();
 ///
 ///     // Calculate sum over ten random numbers
 ///     let mut total = 0f32;
 ///     for _ in 0..10 {
-///         total += rng.gen::<f32>();
+///         total += rng.random::<f32>();
 ///     }
 ///
 ///     total
